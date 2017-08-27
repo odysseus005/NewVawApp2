@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".RA9710"
+    tools:showIn="@layout/activity_ra9710">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHAT IS RA 9710 OR THE MAGNA CARTA OF WOMEN?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHAT IS DISCRIMINATION AGAINST WOMEN?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHAT ARE THE RIGHTS OF WOMEN GUARANTEED UNDER THE MAGNA CARTA OF WOMEN?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="THE MAGNA CARTA OF WOMEN SPELLS OUT THE FOLLOWING RIGHTS:"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="THE MAGNA CARTA OF WOMEN ALSO GUARANTEES THE FOLLOWING CIVIL, POLITICAL AND ECONOMIC RIGHTS OF WOMEN IN THE MARGINALIZED SECTORS:"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content11"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

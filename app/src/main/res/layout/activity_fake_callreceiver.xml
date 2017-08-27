@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorText"
+    tools:context="com.exampledemo.parsaniahardik.getcontactdetailsdemonuts.FakeCallReceiver">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:contentDescription="@null"
+        android:src="@drawable/fake_photo" />
+
+    <TextView
+        android:id="@+id/chosenfakename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageView1"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="16dp"
+        android:textSize="30sp"
+        android:text="@string/fakecallname" />
+
+    <TextView
+        android:id="@+id/chosenfakenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chosenfakename"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/fakecallnumber" />
+
+    <TextView
+        android:id="@+id/faketime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/cardview_dark_background"
+        android:layout_marginTop="5dp"
+        android:textSize="16sp"
+        android:text="@string/fakecalltime"
+        android:layout_below="@+id/chosenfakenumber"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout android:layout_height="65dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_above="@+id/rejectcall"
+        android:layout_margin="20dp"
+        >
+
+        <ImageButton
+            android:id="@+id/fake_audio"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="left"
+            android:layout_marginRight="45dp"
+            android:contentDescription="@null"
+            android:background="@drawable/fake_audio"
+            />
+
+        <ImageButton
+            android:id="@+id/fake_mic"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:background="@drawable/fake_mic"
+            />
+
+        <ImageButton
+            android:id="@+id/fake_vid"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="45dp"
+            android:background="@drawable/fake_vid"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/rejectcall"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:contentDescription="@null"
+        android:background="@drawable/fake_reject"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp" />
+
+</RelativeLayout>

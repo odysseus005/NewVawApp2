@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".RA9262"
+    tools:showIn="@layout/activity_ra9262">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="VIOLENCE AGAINST WOMEN"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="GENDER-BASED VIOLENCE (GBV)"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="REPUBLIC ACT 9262"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHAT IS VAWC UNDER RA 9262?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="VAWC INCLUDES, BUT IS NOT LIMITED TO THE FOLLOWING ACTS:"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHO GETS PROTECTED UNDER THE LAW?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHAT CAN WOMEN AND CHILDREN DO UNDER RA 9262?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="IS VAWC COMMITTED BY MEN ALONE?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHAT IF THE MALE SPOUSE/PARTNER COMPLAINS ABOUT ABUSES COMMITTED BY HIS WIFE/PARTNER?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHO MAY FILE A COMPLAINT UNDER RA 9262?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHERE SHOULD CASES FOR VAWC BE FILED?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHAT ARE THE PENALTIES FOR COMMITTING VAWC?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHAT IS BATTERED WOMAN SYNDROME (BWS)?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content13"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHAT IS A PROTECTION ORDER?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content14"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp"
+            android:text="WHO MAY APPLY FOR PROTECTION ORDER?"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/content15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

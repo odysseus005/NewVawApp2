@@ -1,0 +1,406 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_shadow_end_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".VawLawSection">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_vertical_margin"
+            android:background="@null">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view0"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="2dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="110dp"
+            android:background="#fff"
+            android:elevation="4dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/cardview_list_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:paddingBottom="5dp"
+                android:textStyle="normal"
+                android:text="@string/RA1"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/short_description3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/RA7877"
+                android:layout_below="@+id/cardview_list_title3"
+                android:textColor="@color/colorOrange"
+                android:layout_toLeftOf="@+id/btnRA1"
+                android:layout_toStartOf="@+id/btnRA1" />
+
+            <Button
+                style="@style/ButtonStyle"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                android:text="@string/details"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorText"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                tools:radius="10dp"
+                tools:elevation="10dp"
+                android:id="@+id/btnRA1" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view1"
+            android:layout_width="fill_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="2dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:background="#fff"
+                android:elevation="4dp"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/RA2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:paddingBottom="5dp"
+                    android:textStyle="normal"
+                    android:text="@string/RA2"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/RA22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/RA8353"
+                    android:layout_below="@+id/RA2"
+                    android:textStyle="normal"
+                    android:textColor="@color/colorOrange"
+                    android:layout_toLeftOf="@+id/btnRA2"
+                    android:layout_toStartOf="@+id/btnRA2" />
+
+                <Button
+                    style="@style/ButtonStyle"
+                    android:layout_width="75dp"
+                    android:layout_height="45dp"
+                    android:text="@string/details"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorText"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    tools:radius="10dp"
+                    tools:elevation="10dp"
+                    android:id="@+id/btnRA2" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view2"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="110dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/RA3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:paddingBottom="5dp"
+                        android:textStyle="normal"
+                        android:text="@string/RA3"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/RA33"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/RA8505"
+                        android:layout_below="@+id/RA3"
+                        android:textStyle="normal"
+                        android:textColor="@color/colorOrange"
+                        android:layout_toLeftOf="@+id/btnRA3"
+                        android:layout_toStartOf="@+id/btnRA3" />
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:text="@string/details"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/colorText"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        tools:radius="10dp"
+                        tools:elevation="10dp"
+                        android:id="@+id/btnRA3" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view3"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="110dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/RA4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:paddingBottom="5dp"
+                        android:textStyle="normal"
+                        android:text="@string/RA4"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/RA44"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="@string/RA9208"
+                        android:layout_below="@+id/RA4"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        android:textColor="@color/colorOrange"
+                        android:layout_toLeftOf="@+id/btnRA4"
+                        android:layout_toStartOf="@+id/btnRA4" />
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:text="@string/details"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/colorText"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        tools:radius="10dp"
+                        tools:elevation="10dp"
+                        android:id="@+id/btnRA4" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view4"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="110dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/RA5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:paddingBottom="5dp"
+                        android:textStyle="normal"
+                        android:text="@string/RA5"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/RA55"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:text="@string/RA9262"
+                        android:layout_below="@+id/RA5"
+                        android:textStyle="normal"
+                        android:textColor="@color/colorOrange"
+                        android:layout_toLeftOf="@+id/btnRA5"
+                        android:layout_toStartOf="@+id/btnRA5" />
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:text="@string/details"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/colorText"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/btnRA5" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view5"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="110dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/RA6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:paddingBottom="5dp"
+                        android:textStyle="normal"
+                        android:text="@string/RA6"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/RA66"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:text="@string/RA9710"
+                        android:layout_below="@+id/RA6"
+                        android:textStyle="normal"
+                        android:textColor="@color/colorOrange"
+                        android:layout_toLeftOf="@+id/btnRA6"
+                        android:layout_toStartOf="@+id/btnRA6" />
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:text="@string/details"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/colorText"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/btnRA6" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view7"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="110dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/RA7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:paddingBottom="5dp"
+                        android:textStyle="normal"
+                        android:text="@string/RA7"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/RA77"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:text="@string/RA9995"
+                        android:layout_below="@+id/RA7"
+                        android:textStyle="normal"
+                        android:textColor="@color/colorOrange"
+                        android:layout_toLeftOf="@+id/btnRA7"
+                        android:layout_toStartOf="@+id/btnRA7" />
+
+                    <Button
+                        style="@style/ButtonStyle"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:text="@string/details"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/colorText"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/btnRA7" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

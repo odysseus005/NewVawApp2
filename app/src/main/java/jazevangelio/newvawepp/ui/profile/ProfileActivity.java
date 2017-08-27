@@ -1,0 +1,190 @@
+package jazevangelio.newvawepp.ui.profile;
+
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.databinding.DataBindingUtil;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.hannesdorfmann.mosby.mvp.viewstate.MvpViewStateActivity;
+import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;
+
+import io.realm.Realm;
+import io.realm.RealmChangeListener;
+import io.realm.RealmModel;
+import jazevangelio.newvawepp.R;
+import jazevangelio.newvawepp.app.Constants;
+import jazevangelio.newvawepp.databinding.ActivityProfileBinding;
+import jazevangelio.newvawepp.databinding.DialogChangePasswordBinding;
+import jazevangelio.newvawepp.model.data.User;
+import jazevangelio.newvawepp.ui.profile.edit.EditProfileActivity;
+import jazevangelio.newvawepp.util.CircleTransform;
+
+
+public class ProfileActivity extends MvpViewStateActivity<ProfileView, ProfilePresenter>
+        implements ProfileView, SwipeRefreshLayout.OnRefreshListener {
+
+    private ActivityProfileBinding binding;
+    private Realm realm;
+    private User user;
+    private ProgressDialog progressDialog;
+    private Dialog dialog;
+
+    @SuppressWarnings("ConstantConditions")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+        realm = Realm.getDefaultInstance();
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_profile);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("My Profile");
+        //binding.swipeRefreshLayout.setColorSchemeColors(getResources().getIntArray(R.array.swipe_refresh_layout_color_scheme));
+        binding.swipeRefreshLayout.setOnRefreshListener(this);
+        user = realm.where(User.class).findFirstAsync();
+        user.addChangeListener(new RealmChangeListener<RealmModel>() {
+            @Override
+            public void onChange(RealmModel element) {
+                if (user.isLoaded() && user.isValid()) {
+                    binding.setUser(user);
+                    String imageURL = "https://payapp.tip.edu.ph/api/storage/app/image/default_buyer.png";
+                    if (user.getImage() != null && !user.getImage().isEmpty()) {
+                        imageURL = Constants.URL_IMAGE+user.getImage()+".jpg";
+                        Log.d("TAG",imageURL);
+                    }
+                    Glide.with(ProfileActivity.this)
+                            .load(imageURL)
+                            .transform(new CircleTransform(ProfileActivity.this))
+                            .diskCacheStrategy(DiskCacheStrategy.ALL)
+                            .into(binding.layoutHeader.imageView);
+                }
+            }
+        });
+        binding.setView(getMvpView());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_profile, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            case R.id.action_edit_profile:
+                startActivity(new Intent(this, EditProfileActivity.class));
+                return true;
+
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        user.removeChangeListeners();
+        realm.close();
+        super.onDestroy();
+    }
+
+
+    @Override
+    public void onPasswordChanged() {
+        if(dialog.isShowing()){
+            dialog.dismiss();
+            showAlert("Password Successfully Changed!");
+        }
+    }
+
+    @NonNull
+    @Override
+    public ProfilePresenter createPresenter() {
+        return new ProfilePresenter();
+    }
+
+    @NonNull
+    @Override
+    public ViewState<ProfileView> createViewState() {
+        setRetainInstance(true);
+        return new ProfileViewState();
+    }
+
+    @Override
+    public void onNewViewStateInstance() {
+
+    }
+
+    @Override
+    public void onRefresh() {
+        // todo create refresh
+        binding.swipeRefreshLayout.setRefreshing(false);
+    }
+
+    @Override
+    public void onChangePasswordClicked() {
+
+        dialog = new Dialog(ProfileActivity.this);
+        final DialogChangePasswordBinding dialogBinding = DataBindingUtil.inflate(
+                getLayoutInflater(),
+                R.layout.dialog_change_password,
+                null,
+                false);
+        dialogBinding.cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialogBinding.send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.changePassword(dialogBinding.etCurrPassword.getText().toString(),
+                        dialogBinding.etNewPassword.getText().toString(),
+                        dialogBinding.etConfirmPass.getText().toString());
+            }
+        });
+        dialog.setContentView(dialogBinding.getRoot());
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
+    @Override
+    public void showProgress() {
+        if (progressDialog == null) {
+            progressDialog = new ProgressDialog(this);
+            progressDialog.setCancelable(false);
+            progressDialog.setMessage("Connecting");
+        }
+        progressDialog.show();
+    }
+
+    @Override
+    public void stopProgress() {
+        if (progressDialog != null) progressDialog.dismiss();
+    }
+
+    @Override
+    public void showAlert(String message) {
+        new AlertDialog.Builder(this)
+                .setTitle(message)
+                .setPositiveButton("Close", null)
+                .show();
+    }
+}
