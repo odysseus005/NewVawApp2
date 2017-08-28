@@ -22,6 +22,20 @@ public class SmsUtil {
     }
 
 
+    public static void sendTurnOffSMS(String phoneNumber, Double lat, Double lng,String user, String contact) {
+
+
+        String uri = "http://maps.google.com/maps?saddr=" + lat+","+lng;
+
+        SmsManager smsManager = SmsManager.getDefault();
+        StringBuffer smsBody = new StringBuffer();
+        smsBody.append(Uri.parse(uri));
+        smsManager.sendTextMessage(phoneNumber, null, "Hi! "+contact+"\n It's me, "+user +" I already turn off my Emergency Notification "+smsBody.toString(), null, null);
+
+
+    }
+
+
     public static void sendLocationSMSEmergency(String phoneNumber, Double lat, Double lng,String user, String contact) {
 
 

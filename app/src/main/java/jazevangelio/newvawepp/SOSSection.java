@@ -644,6 +644,27 @@ public class SOSSection extends AppCompatActivity {
                     flashOff();
                     show.dismiss();
                 }
+
+
+                User user = realm.where(User.class).findFirst();
+                List<Emergency> emergencies = realm.where(Emergency.class).findAll();
+                if (!emergencies.isEmpty()) {
+                    for (Emergency emergency : emergencies) {
+                        try {
+                            SmsUtil.sendTurnOffSMS(emergency.getContact(), location.getLatitude(), location.getLongitude(),user.getFirstname(),emergency.getName());
+                        }catch (Exception e)
+                        {
+                            Log.d("Error",e+"");
+                            showAlert("Can't Access Location");
+                        }
+                    }
+                    showAlert("Sending Emergency Text...");
+
+                }else
+                    showAlert("No Emergency Contact! Add ");
+
+
+
                 timer.cancel();
             }
         });

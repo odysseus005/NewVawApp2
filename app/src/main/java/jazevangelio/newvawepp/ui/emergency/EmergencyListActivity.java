@@ -272,6 +272,14 @@ public class EmergencyListActivity
 
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+
+    }
+
 
 
 }

@@ -3,6 +3,7 @@ package jazevangelio.newvawepp.ui.register;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -24,8 +25,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
+import jazevangelio.newvawepp.MainActivity;
 import jazevangelio.newvawepp.R;
 import jazevangelio.newvawepp.databinding.ActivityRegisterBinding;
+import jazevangelio.newvawepp.ui.login.LoginActivity;
 
 
 public class RegisterActivity extends MvpViewStateActivity<RegisterView, RegisterPresenter> implements RegisterView, TextWatcher {
@@ -155,6 +158,7 @@ public class RegisterActivity extends MvpViewStateActivity<RegisterView, Registe
                     public void onClick(DialogInterface dialogInterface, int i) {
                         RegisterActivity.this.finish();
                        // Toast.makeText(RegisterActivity.this, "An email has been sent to your email for verification!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                     }
                 })
                 .show();
@@ -195,6 +199,12 @@ public class RegisterActivity extends MvpViewStateActivity<RegisterView, Registe
     @Override
     public void afterTextChanged(Editable editable) {
 
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        startActivity(new Intent(this, LoginActivity.class));
     }
 
 

@@ -114,14 +114,14 @@
                     android:text=" "
                     android:inputType="number"
                     android:textSize="16sp" />
-                <EditText
+              <!--  <EditText
                     android:id="@+id/et_bday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Age"
+                    android:hint="B"
                     android:inputType="number"
-                    android:textSize="16sp" />
-             <!--   <EditText
+                    android:textSize="16sp" /> -->
+              <EditText
                     android:id="@+id/et_bday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
                     android:focusable="false"
                     android:hint="@string/birthday"
                     android:onClick="@{()->view.onBirthdayClicked()}"
-                    />-->
+                    />
 
 
 

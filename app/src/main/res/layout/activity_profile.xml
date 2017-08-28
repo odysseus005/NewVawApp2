@@ -93,7 +93,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="Age"
+                android:text="Birthday"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
             <TextView

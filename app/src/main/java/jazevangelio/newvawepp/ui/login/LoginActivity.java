@@ -28,6 +28,7 @@ import jazevangelio.newvawepp.MainActivity;
 import jazevangelio.newvawepp.R;
 import jazevangelio.newvawepp.databinding.ActivityLoginBinding;
 import jazevangelio.newvawepp.model.data.User;
+import jazevangelio.newvawepp.ui.forgot.ForgotPasswordActivity;
 import jazevangelio.newvawepp.ui.register.RegisterActivity;
 
 import com.facebook.FacebookSdk;
@@ -237,7 +238,7 @@ public class LoginActivity extends MvpViewStateActivity<LoginView, LoginPresente
 
     @Override
     public void onForgotPasswordButtonClicked() {
-      //  startActivity(new Intent(this, ForgotPasswordActivity.class));
+        startActivity(new Intent(this, ForgotPasswordActivity.class));
     }
 
     @Override
@@ -259,6 +260,13 @@ public class LoginActivity extends MvpViewStateActivity<LoginView, LoginPresente
         LoginViewState loginViewState = (LoginViewState) getViewState();
         loginViewState.setUsername(binding.etEmail.getText().toString());
         loginViewState.setPassword(binding.etPassword.getText().toString());
+    }
+
+    @Override
+    public  void onBackPressed()
+    {
+        finish();
+
     }
 }
 
