@@ -73,6 +73,7 @@ public class MapPoliceActivity extends MvpActivity<MapView, MapPresenter> implem
     private ActivityMapsPoliceBinding binding;
     private MapListAdapter adapter;
     private FusedLocation fusedLocation;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -198,7 +199,7 @@ public class MapPoliceActivity extends MvpActivity<MapView, MapPresenter> implem
                 R.layout.dialog_show_nearest_police,
                 null,
                 false);
-        final Dialog dialog = new Dialog(MapPoliceActivity.this);
+         dialog = new Dialog(MapPoliceActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -311,6 +312,15 @@ public class MapPoliceActivity extends MvpActivity<MapView, MapPresenter> implem
         }
         return true;
     }
+
+    @Override
+    public void OnItemClicked(NearCompany company) {
+
+        dialog.dismiss();
+        LatLng latLng = new LatLng(company.getCompanyLat(), company.getCompanyLng());
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+    }
+
 
     @Override
     protected void onResume() {

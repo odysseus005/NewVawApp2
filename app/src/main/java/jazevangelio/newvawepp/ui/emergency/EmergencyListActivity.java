@@ -31,6 +31,7 @@ import io.realm.RealmChangeListener;
 import io.realm.RealmResults;
 import jazevangelio.newvawepp.MainActivity;
 import jazevangelio.newvawepp.R;
+import jazevangelio.newvawepp.SOSSection;
 import jazevangelio.newvawepp.databinding.ActivityEmergencyListBinding;
 import jazevangelio.newvawepp.databinding.DialogEmergencyBinding;
 import jazevangelio.newvawepp.model.data.Emergency;
@@ -260,6 +261,7 @@ public class EmergencyListActivity
     @Override
     public void successAdd(String name, String contact)
     {
+        onRefresh();
 
         try {
             SmsUtil.sendNotification(contact,user.getFirstname(),name);
@@ -275,7 +277,7 @@ public class EmergencyListActivity
     @Override
     public void onBackPressed()
     {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, SOSSection.class));
         finish();
 
     }

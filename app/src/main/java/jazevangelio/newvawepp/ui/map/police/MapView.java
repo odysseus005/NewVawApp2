@@ -12,7 +12,7 @@ public interface MapView extends MvpView {
 
     void setNearestCompany(List<NearCompany> companyList);
 
-   // void OnItemClicked(NearCompany companyList);
+    void OnItemClicked(NearCompany companyList);
 
     void startLoading(String s);
 

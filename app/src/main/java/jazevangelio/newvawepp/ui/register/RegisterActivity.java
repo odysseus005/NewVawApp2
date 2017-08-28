@@ -11,9 +11,11 @@ import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -34,8 +36,8 @@ import jazevangelio.newvawepp.ui.login.LoginActivity;
 public class RegisterActivity extends MvpViewStateActivity<RegisterView, RegisterPresenter> implements RegisterView, TextWatcher {
     private ActivityRegisterBinding binding;
     private ProgressDialog progressDialog;
-    private CheckBox checkBox;
-    ArrayList<String> items=new ArrayList<String>();
+    private RadioButton radioSexButton;
+    private String etAddress;
 
 
     @Override
@@ -46,10 +48,7 @@ public class RegisterActivity extends MvpViewStateActivity<RegisterView, Registe
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register);
         binding.setView(getMvpView());
 
-        items.add("Male");
-        items.add("Female");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, items);
-        binding.etAddress.setAdapter(adapter);
+
 
         setSupportActionBar(binding.toolbar);
         if (getSupportActionBar() != null)
@@ -102,6 +101,10 @@ public class RegisterActivity extends MvpViewStateActivity<RegisterView, Registe
 
     @Override
     public void onSubmit() {
+
+        int selectedId=binding.radioGroup.getCheckedRadioButtonId();
+        radioSexButton=(RadioButton)findViewById(selectedId);
+
         presenter.register(
                 binding.etEmail.getText().toString(),
                 binding.etPassword.getText().toString(),
@@ -110,7 +113,7 @@ public class RegisterActivity extends MvpViewStateActivity<RegisterView, Registe
                 binding.etLName.getText().toString(),
                 binding.etBday.getText().toString(),
                 binding.etContact.getText().toString(),
-                binding.etAddress.getSelectedItem().toString());
+               radioSexButton.getText().toString());
 
     }
 
@@ -128,7 +131,7 @@ public class RegisterActivity extends MvpViewStateActivity<RegisterView, Registe
         binding.etLName.setText(lastName);
         binding.etBday.setText(birthday);
         binding.etContact.setText(contact);
-        binding.etAddress.setSelection(0);
+
     }
 
     @Override

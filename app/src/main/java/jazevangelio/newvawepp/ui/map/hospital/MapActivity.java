@@ -76,6 +76,7 @@ public class MapActivity extends MvpActivity<MapView, MapPresenter> implements M
     private ActivityMapsBinding binding;
     private MapListAdapter adapter;
     private FusedLocation fusedLocation;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -203,7 +204,7 @@ public class MapActivity extends MvpActivity<MapView, MapPresenter> implements M
                 R.layout.dialog_show_nearest,
                 null,
                 false);
-        final Dialog dialog = new Dialog(MapActivity.this);
+        dialog = new Dialog(MapActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -418,6 +419,15 @@ public class MapActivity extends MvpActivity<MapView, MapPresenter> implements M
 
         }
     }
+
+    @Override
+    public void OnItemClicked(NearCompany company) {
+        dialog.dismiss();
+        LatLng latLng = new LatLng(company.getCompanyLat(), company.getCompanyLng());
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+    }
+
+
 
     @Override
     protected void onPause() {
